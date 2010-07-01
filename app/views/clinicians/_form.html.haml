@@ -1,0 +1,22 @@
+= form_for @clinician do |f|
+  -if @clinician.errors.any?
+    #errorExplanation
+      %h2= "#{pluralize(@clinician.errors.count, "error")} prohibited this clinician from being saved:"
+      %ul
+        - @clinician.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f.label :password
+    = f.password_field :password
+  .field
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
+  .actions
+    = f.submit 'Save'
