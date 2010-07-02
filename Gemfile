@@ -25,6 +25,9 @@ group :development do
   # Add additional generators for Rails in the development environment
   gem 'rails3-generators'
 
+  # Add Yard support for documentation
+  # gem 'yard'
+
   # Add support for getting this on heroku
   # gem 'taps'
   # gem 'heroku'

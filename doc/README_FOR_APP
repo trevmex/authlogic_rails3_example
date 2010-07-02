@@ -1,12 +1,14 @@
 This is an example application demonstrating Authlogic running on Rails 3.
 
+It uses the email to login, you could also use a login field, if you like. I use a custom email validator (blatantly stolen from Ryan Bates) to validate email formats.
+
 It also includes RSpec tests for the Authlogic controller.
 
 To run the app:
 bundle install
 rake db:migrate
 rails s
-open http://localhost:3000
+open http://localhost:3000/users/new
 
 The root directory redirects to the login page.
 
