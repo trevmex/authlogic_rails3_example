@@ -18,15 +18,17 @@ gem 'paperclip'
 gem 'aws-s3', :require => 'aws/s3'
 gem 'right_aws'
 
-# Add support for getting this on heroku
-gem 'taps'
-gem 'heroku'
-
 # Add support for sqlite3 for dev and test DBs
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
-# Add additional generators for Rails in the development environment
-gem 'rails3-generators', :group => :development
+group :development do
+  # Add additional generators for Rails in the development environment
+  gem 'rails3-generators'
+
+  # Add support for getting this on heroku
+  gem 'taps'
+  gem 'heroku'
+end
 
 # Add support for RSpec in the test environment
 group :test do
