@@ -33,7 +33,7 @@ end
 # Add support for RSpec in the test environment
 group :test do
   gem 'rspec-rails', '>= 2.0.0.beta.13'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
 end
 
 # Use unicorn as the web server
