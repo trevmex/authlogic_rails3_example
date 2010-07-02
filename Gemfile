@@ -12,11 +12,11 @@ gem 'haml'
 gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3' # TODO: test this with official version of authlogic
 
 # Add support for paperclip (used for uploading content and profile pics)
-gem 'paperclip'
+# gem 'paperclip'
 
 # Add S3 support for attaching files with paperclip
-gem 'aws-s3', :require => 'aws/s3'
-gem 'right_aws'
+# gem 'aws-s3', :require => 'aws/s3'
+# gem 'right_aws'
 
 # Add support for sqlite3 for dev and test DBs
 gem 'sqlite3-ruby', :require => 'sqlite3'
@@ -26,8 +26,8 @@ group :development do
   gem 'rails3-generators'
 
   # Add support for getting this on heroku
-  gem 'taps'
-  gem 'heroku'
+  # gem 'taps'
+  # gem 'heroku'
 end
 
 # Add support for RSpec in the test environment

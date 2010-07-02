@@ -1,9 +1,9 @@
-= form_for @clinician_session, :url => login_path do |f|
-  -if @clinician_session.errors.any?
+= form_for @user_session, :url => login_path do |f|
+  -if @user_session.errors.any?
     #errorExplanation
-      %h2= "#{pluralize(@clinician_session.errors.count, "error")} prohibited this clinician from being saved:"
+      %h2= "#{pluralize(@user_session.errors.count, "error")} prohibited this user from being saved:"
       %ul
-        - @clinician_session.errors.full_messages.each do |msg|
+        - @user_session.errors.full_messages.each do |msg|
           %li= msg
   
   .field

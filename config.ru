@@ -1,4 +1,4 @@
 # This file is used by Rack-based servers to start the application.
 
 require ::File.expand_path('../config/environment',  __FILE__)
-run Paalapi2::Application
+run AuthlogicRails3Example::Application

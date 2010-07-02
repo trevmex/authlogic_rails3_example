@@ -1,9 +1,9 @@
-= form_for @clinician do |f|
-  -if @clinician.errors.any?
+= form_for @user do |f|
+  -if @user.errors.any?
     #errorExplanation
-      %h2= "#{pluralize(@clinician.errors.count, "error")} prohibited this clinician from being saved:"
+      %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
       %ul
-        - @clinician.errors.full_messages.each do |msg|
+        - @user.errors.full_messages.each do |msg|
           %li= msg
 
   .field

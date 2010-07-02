@@ -11,7 +11,7 @@
 
 ActiveRecord::Schema.define(:version => 20100701044600) do
 
-  create_table "clinicians", :force => true do |t|
+  create_table "users", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"

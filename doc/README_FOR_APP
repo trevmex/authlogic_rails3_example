@@ -1,2 +1,24 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+This is an example application demonstrating Authlogic running on Rails 3.
+
+It also includes RSpec tests for the Authlogic controller.
+
+To run the app:
+bundle install
+rake db:migrate
+rails s
+open http://localhost:3000
+
+The root directory redirects to the login page.
+
+To run the tests:
+bundle install
+rake db:migrate
+rake db:test:prepare
+rake
+
+You can also run autotest for continual testing.
+
+The version of Authlogic used here is a fork that is at:
+git://github.com/odorcicd/authlogic.git branch 'rails3'
+
+I am using this because I got a "to_key" error with the official repo.

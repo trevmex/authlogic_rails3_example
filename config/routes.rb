@@ -1,11 +1,11 @@
-Paalapi2::Application.routes.draw do |map|
-  resources :clinicians
+AuthlogicRails3Example::Application.routes.draw do |map|
+  resources :users
   
-  get    'login(.:format)'  => 'clinician_session#new',     :as => :login
-  post   'login(.:format)'  => 'clinician_session#create',  :as => :login
-  delete 'logout(.:format)' => 'clinician_session#destroy', :as => :logout
+  get    'login(.:format)'  => 'user_session#new',     :as => :login
+  post   'login(.:format)'  => 'user_session#create',  :as => :login
+  delete 'logout(.:format)' => 'user_session#destroy', :as => :logout
 
-  root :to => 'clinician_session#new' # login page
+  root :to => 'user_session#new' # login page
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

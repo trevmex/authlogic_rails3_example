@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe "Clinicians" do
-  describe "GET /clinicians" do
+describe "Users" do
+  describe "GET /users" do
     it "works! (now write some real specs)" do
-      get clinicians_path
+      get users_path
     end
   end
 end
