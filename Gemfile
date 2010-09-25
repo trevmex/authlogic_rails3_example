@@ -9,7 +9,9 @@ gem 'rails', '3.0.0'
 gem 'haml'
 
 # Add support for Authlogic authentication
-gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3' # TODO: test this with official version of authlogic
+# gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3' # TODO: test this with official version of authlogic
+
+gem 'devise'
 
 # Add support for paperclip (used for uploading content and profile pics)
 # gem 'paperclip'
@@ -21,6 +23,8 @@ gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => '
 # Add support for sqlite3 for dev and test DBs
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
+gem 'declarative_authorization'
+
 group :development do
   # Add additional generators for Rails in the development environment
   gem 'rails3-generators'
@@ -31,6 +35,7 @@ group :development do
   # Add support for getting this on heroku
   # gem 'taps'
   # gem 'heroku'
+  gem "ruby_parser"
 end
 
 # Add support for RSpec in the test environment

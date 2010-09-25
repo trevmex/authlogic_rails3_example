@@ -1,11 +1,11 @@
 AuthlogicRails3Example::Application.routes.draw do 
-  resources :users
-  
-  get    'login(.:format)'  => 'user_session#new',     :as => :login
-  post   'login(.:format)'  => 'user_session#create',  :as => :login
-  delete 'logout(.:format)' => 'user_session#destroy', :as => :logout
+  devise_for :admins
 
-  root :to => 'user_session#new' # login page
+  devise_for :users
+
+  resources :x_users
+  
+  root :to => redirect("/x_users")
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

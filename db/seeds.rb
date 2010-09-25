@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+# Seed the system with an admin users
+Admin.all.each do |a|
+  a.destroy
+end
+user = Admin.create! do |u|
+  u.email = "bradphelan@xtargets.com" 
+  u.password = "foobar"
+  u.password_confirmation = "foobar"
+  u.remember_me = false
+end

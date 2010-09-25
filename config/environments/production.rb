@@ -45,4 +45,8 @@ AuthlogicRails3Example::Application.configure do
   config.i18n.fallbacks = true
 
   config.autoload_paths = ["lib"]
+
+  # TODO fix this
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
 end
