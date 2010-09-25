@@ -13,6 +13,12 @@ gem 'haml'
 
 gem 'devise'
 
+# This is for devise haml template to be generated
+gem 'hpricot'
+
+# This is for supporting gmail
+gem 'tlsmail'
+
 # Add support for paperclip (used for uploading content and profile pics)
 # gem 'paperclip'
 

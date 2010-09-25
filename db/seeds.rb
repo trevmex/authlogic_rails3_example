@@ -7,12 +7,18 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 # Seed the system with an admin users
-Admin.all.each do |a|
-  a.destroy
+User.all.each do |u|
+  if u.roles == [:admin]
+    u.destroy
+  end
 end
-user = Admin.create! do |u|
+
+user = User.create! do |u|
   u.email = "bradphelan@xtargets.com" 
   u.password = "foobar"
   u.password_confirmation = "foobar"
   u.remember_me = false
+  u.roles = [:admin]
 end
+user.confirm!
+

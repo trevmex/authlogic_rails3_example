@@ -10,8 +10,9 @@
   - @users.each do |user|
     %tr
       %td= user.email
--#       %td= link_to 'Show', user
--#       %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
+      %td= " with roles - "
+      - user.roles.each do |role|
+        %td= role
 
 %br
 

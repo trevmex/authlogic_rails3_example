@@ -1,5 +1,4 @@
 AuthlogicRails3Example::Application.routes.draw do 
-  devise_for :admins
 
   devise_for :users
 
