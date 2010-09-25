@@ -1,4 +1,4 @@
-AuthlogicRails3Example::Application.routes.draw do |map|
+AuthlogicRails3Example::Application.routes.draw do 
   resources :users
   
   get    'login(.:format)'  => 'user_session#new',     :as => :login
