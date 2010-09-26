@@ -3,6 +3,7 @@ This is an example application demonstrating Devise running with DeclarativeAuth
 To run the app:
 bundle install
 rake db:migrate
+rake db:seed # to seed the admin user
 rails s
 open http://localhost:3000/users/new
 
