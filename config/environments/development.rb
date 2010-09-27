@@ -26,24 +26,26 @@ AuthlogicRails3Example::Application.configure do
   require 'tlsmail' #key but not always described
   Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
 
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.perform_deliveries = true
-  ActionMailer::Base.raise_delivery_errors = true
 
   gmail_user = ENV['GMAIL_USER']
-  raise "Please set GMAIL_USER in environment" unless gmail_user
+  puts "Please set GMAIL_USER in environment" unless gmail_user
 
   gmail_pass = ENV['GMAIL_PASSWORD']
-  raise "Please set GMAIL_PASSWORD in environment" unless gmail_pass
+  puts "Please set GMAIL_PASSWORD in environment" unless gmail_pass
 
-  ActionMailer::Base.smtp_settings = {
-    :enable_starttls_auto => true,  #this is the important shit!
-    :address        => 'smtp.gmail.com',
-    :port           => 587,
-    :domain         => 'xtargets.com',
-    :authentication => :plain,
-    :user_name      => gmail_user,
-    :password       => gmail_pass
-  }
+  if gmail_user and gmail_pass
+    ActionMailer::Base.delivery_method = :smtp
+    ActionMailer::Base.perform_deliveries = true
+    ActionMailer::Base.raise_delivery_errors = true
+    ActionMailer::Base.smtp_settings = {
+      :enable_starttls_auto => true,  #this is the important shit!
+      :address        => 'smtp.gmail.com',
+      :port           => 587,
+      :domain         => 'xtargets.com',
+      :authentication => :plain,
+      :user_name      => gmail_user,
+      :password       => gmail_pass
+    }
+  end
 
 end

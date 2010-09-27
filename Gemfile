@@ -8,6 +8,9 @@ gem 'rails', '3.0.0'
 # Add support for haml as well as erb
 gem 'haml'
 
+# Add support for COMPASS SASS framework
+gem "compass", ">= 0.10.5"
+
 # Add support for Authlogic authentication
 # gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3' # TODO: test this with official version of authlogic
 

@@ -1,18 +1,17 @@
 %h1 Listing users
 
-%table
-  %tr
-    %th Name
-    %th
-    %th
-    %th
-
-  - @users.each do |user|
-    %tr
-      %td= user.email
-      %td= " with roles - "
-      - user.roles.each do |role|
-        %td= role
+.user
+  %table{:cellspacing => "0"}
+    %thead
+      %th="Email"
+      %th="Roles"
+    
+    %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.email
+        - user.roles.each do |role|
+          %td= role
 
 %br
 
