@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe UserSessionController do
   def mock_user_session(stubs={})
-    @mock_user_session ||= mock_model(UserSession, stubs).as_null_object
+    @mock_user_session ||= mock_model("UserSession_", stubs).as_null_object
   end
 
   describe "when no user is authenticated" do

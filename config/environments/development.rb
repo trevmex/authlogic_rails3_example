@@ -14,6 +14,38 @@ AuthlogicRails3Example::Application.configure do
   config.action_view.debug_rjs             = true
   config.action_controller.perform_caching = false
 
-  # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  config.active_support.deprecation = :stderr
+
+  config.autoload_paths = ["lib"]
+
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  # See
+  # http://ionrails.com/2009/07/27/sending-mail-via-gmail-with-rails-actionmailer/
+
+  require 'tlsmail' #key but not always described
+  Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
+
+
+  gmail_user = ENV['GMAIL_USER']
+  puts "Please set GMAIL_USER in environment" unless gmail_user
+
+  gmail_pass = ENV['GMAIL_PASSWORD']
+  puts "Please set GMAIL_PASSWORD in environment" unless gmail_pass
+
+  if gmail_user and gmail_pass
+    ActionMailer::Base.delivery_method = :smtp
+    ActionMailer::Base.perform_deliveries = true
+    ActionMailer::Base.raise_delivery_errors = true
+    ActionMailer::Base.smtp_settings = {
+      :enable_starttls_auto => true,  #this is the important shit!
+      :address        => 'smtp.gmail.com',
+      :port           => 587,
+      :domain         => 'xtargets.com',
+      :authentication => :plain,
+      :user_name      => gmail_user,
+      :password       => gmail_pass
+    }
+  end
+
 end

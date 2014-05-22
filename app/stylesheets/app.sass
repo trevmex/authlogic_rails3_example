@@ -1,0 +1,22 @@
+@import "compass/utilities/tables/borders"
+
+=table-cell-dimension($padding: 0px, $margin: 0px)
+  thead
+    tr
+      th
+        padding: $padding
+        margin: $margin
+  tbody
+    tr
+      td
+        padding: $padding
+        margin: $margin
+ 
+.usertable
+  table
+    +inner-table-borders(1px, #7a98c6)
+    +outer-table-borders(2px)
+    +table-cell-dimension(15px, 15px)
+
+
+

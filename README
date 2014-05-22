@@ -1,26 +1,9 @@
-This is an example application demonstrating Authlogic running on Rails 3.
-
-It uses the email to login, you could also use a login field, if you like. I use a custom email validator (blatantly stolen from Ryan Bates) to validate email formats.
-
-It also includes RSpec tests for the Authlogic controller.
+This is an example application demonstrating Devise running with DeclarativeAuthorisation.
 
 To run the app:
 bundle install
 rake db:migrate
+rake db:seed # to seed the admin user
 rails s
 open http://localhost:3000/users/new
 
-The root directory redirects to the login page.
-
-To run the tests:
-bundle install
-rake db:migrate
-rake db:test:prepare
-rake
-
-You can also run autotest for continual testing.
-
-The version of Authlogic used here is a fork that is at:
-git://github.com/odorcicd/authlogic.git branch 'rails3'
-
-I am using this because I got a "to_key" error with the official repo.

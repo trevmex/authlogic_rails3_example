@@ -1,9 +1,17 @@
 class User < ActiveRecord::Base
-  validates :name,  :presence => true
-  validates :email, :presence => true, :uniqueness => true, :email_format => true
-  
-  acts_as_authentic do |c|
-    c.login_field = :email          # email is the login field
-    c. validate_login_field = false # There is no login field, so don't validate it
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :confirmable, :lockable and :timeoutable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :password_confirmation, :remember_me
+
+  # Authorization is done via roles
+  serialize :roles, Array
+
+  def roles
+    self[:roles] || []
   end
+
 end

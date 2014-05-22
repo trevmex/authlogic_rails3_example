@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0.beta4'
+gem 'rails', '3.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -8,8 +8,19 @@ gem 'rails', '3.0.0.beta4'
 # Add support for haml as well as erb
 gem 'haml'
 
+# Add support for COMPASS SASS framework
+gem "compass", ">= 0.10.5"
+
 # Add support for Authlogic authentication
-gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3' # TODO: test this with official version of authlogic
+# gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3' # TODO: test this with official version of authlogic
+
+gem 'devise'
+
+# This is for devise haml template to be generated
+gem 'hpricot'
+
+# This is for supporting gmail
+gem 'tlsmail'
 
 # Add support for paperclip (used for uploading content and profile pics)
 # gem 'paperclip'
@@ -21,6 +32,8 @@ gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => '
 # Add support for sqlite3 for dev and test DBs
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
+gem 'declarative_authorization'
+
 group :development do
   # Add additional generators for Rails in the development environment
   gem 'rails3-generators'
@@ -31,6 +44,7 @@ group :development do
   # Add support for getting this on heroku
   # gem 'taps'
   # gem 'heroku'
+  gem "ruby_parser"
 end
 
 # Add support for RSpec in the test environment

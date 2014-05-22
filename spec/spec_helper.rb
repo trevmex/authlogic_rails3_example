@@ -2,6 +2,8 @@
 # from the project root directory.
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
+
+require 'action_mailer/test_case'
 require 'rspec/rails'
 require 'factory_girl'
 require 'authlogic/test_case'

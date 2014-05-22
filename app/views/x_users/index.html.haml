@@ -1,0 +1,18 @@
+%h1 Listing users
+
+.usertable
+  %table{:cellspacing => "2"}
+    %thead
+      %tr
+        %th="Email"
+        %th="Roles"
+    %tbody
+      - @users.each_with_index do |user, i|
+        %tr.odd
+          %td= user.email
+          - user.roles.each do |role|
+            %td= role
+
+%br
+
+= link_to 'New user', "/users/sign_up"
